@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import CoBrand from "./CoBrand";
 import { BOOKING_URL } from "@/lib/nav";
 
 const COLUMNS = [
@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1240px] px-5 py-16 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.45fr_0.8fr_1fr_1fr]">
           <div>
-            <Logo />
+            <CoBrand />
             <p className="mt-6 max-w-sm text-[18px] leading-relaxed text-body">
               Enterprise security, powered by CrowdStrike Falcon.
             </p>

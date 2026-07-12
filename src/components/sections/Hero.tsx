@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/nav";
+import CrowdStrikeLogo from "@/components/site/CrowdStrikeLogo";
+import FalconMotif from "@/components/site/FalconMotif";
 import TerminalMock from "./TerminalMock";
 
 export default function Hero() {
@@ -9,12 +11,16 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-tint-50 via-white to-tint-50" />
         <div className="absolute inset-0 col-grid opacity-70" />
         <div className="absolute left-1/2 top-24 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.16),transparent_60%)] blur-2xl" />
+        <FalconMotif className="absolute right-[-30px] top-20 h-[280px] w-[480px] opacity-[0.06]" />
+        <FalconMotif className="absolute left-[-60px] top-[440px] h-[220px] w-[380px] -scale-x-100 opacity-[0.045]" />
       </div>
 
       <div className="mx-auto max-w-[1240px] px-5 pb-28 pt-20 text-center sm:pt-24">
-        <p className="reveal-up mx-auto inline-flex rounded-full border border-brand-blue/20 bg-white/80 px-4 py-2 text-[13px] font-semibold text-brand-blue shadow-sm">
-          Powered by CrowdStrike Falcon
-        </p>
+        <span className="reveal-up mx-auto inline-flex items-center gap-2.5 rounded-full border border-brand-blue/20 bg-white/85 px-4 py-2 shadow-sm">
+          <CrowdStrikeLogo height={15} />
+          <span className="h-3.5 w-px bg-ink/15" aria-hidden />
+          <span className="text-[13px] font-semibold text-brand-blue">Powered Partner</span>
+        </span>
         <h1 className="display mx-auto mt-7 max-w-[1040px] text-[48px] sm:text-[68px] lg:text-[82px]">
           Secure the AI era.
           <br />
