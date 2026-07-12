@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BOOKING_URL, NAV } from "@/lib/nav";
-import Logo from "./Logo";
+import CoBrand from "./CoBrand";
 
 export default function Navbar() {
   const [mobile, setMobile] = useState(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-5">
-        <Logo />
+        <CoBrand />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {NAV.map((item) => (
