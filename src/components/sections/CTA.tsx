@@ -11,7 +11,7 @@ function ArrowLink({ href, children }: { href: string; children: React.ReactNode
   );
 }
 
-function SoarseitMark() {
+function SoarseITMark() {
   return (
     <svg aria-hidden="true" width="52" height="52" viewBox="0 0 52 52" fill="none">
       <defs>
@@ -32,7 +32,7 @@ export default function CTA() {
       <div className="pointer-events-none absolute left-1/2 top-8 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(46,125,255,0.14),transparent_62%)] blur-2xl" />
       <div className="relative mx-auto max-w-[1240px] px-5">
         <div className="mb-8 flex justify-center">
-          <SoarseitMark />
+          <SoarseITMark />
         </div>
 
         <h2 className="display mx-auto max-w-[900px] text-center text-[46px] sm:text-[68px] lg:text-[84px]">
@@ -60,13 +60,13 @@ export default function CTA() {
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-cyan/10 blur-3xl" />
             <div className="relative">
               <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-[13px] font-medium text-brand-blue ring-1 ring-brand-blue/15">
-                Why Soarseit
+                Why SoarseIT
               </span>
               <h3 className="mt-8 text-[30px] font-semibold tracking-tight text-ink">One partner. Every stage.</h3>
               <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-body">
                 One partner for licensing, deployment, tuning, and 24/7 operations — so your team runs the business, not the tooling.
               </p>
-              <ArrowLink href="/why-soarseit">Why Soarseit →</ArrowLink>
+              <ArrowLink href="/why-soarseit">Why SoarseIT →</ArrowLink>
             </div>
           </article>
         </div>

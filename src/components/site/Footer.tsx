@@ -6,7 +6,7 @@ const COLUMNS = [
     title: "Explore",
     links: [
       { label: "Modules", href: "/modules" },
-      { label: "Why Soarseit", href: "/why-soarseit" },
+      { label: "Why SoarseIT", href: "/why-soarseit" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -31,7 +31,7 @@ const COLUMNS = [
 ];
 
 const TRADEMARK =
-  "CrowdStrike, Falcon, and Charlotte AI are trademarks of CrowdStrike, Inc. Soarseit is an independent solutions partner and is not affiliated with or endorsed by CrowdStrike, Inc.";
+  "CrowdStrike, Falcon, and Charlotte AI are trademarks of CrowdStrike, Inc. SoarseIT is an independent solutions partner and is not affiliated with or endorsed by CrowdStrike, Inc.";
 
 export default function Footer() {
   return (
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-tint-200 pt-6 text-[12px] leading-relaxed text-body/75">
-          <p className="font-medium text-ink-soft">© Soarseit 2026</p>
+          <p className="font-medium text-ink-soft">© SoarseIT 2026</p>
           <p className="mt-2 max-w-5xl">{TRADEMARK}</p>
         </div>
       </div>

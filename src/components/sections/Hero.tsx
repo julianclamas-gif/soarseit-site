@@ -21,7 +21,7 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mt-7 max-w-[820px] text-[17px] leading-relaxed text-body">
-          Soarseit delivers the CrowdStrike Falcon platform end to end — stopping identity attacks,
+          SoarseIT delivers the CrowdStrike Falcon platform end to end — stopping identity attacks,
           shadow AI, and prompt-injection threats while an AI-native SOC hunts, triages, and responds
           24/7. Deployed, managed, and operated for you.
         </p>

@@ -37,7 +37,7 @@ export default function Logo({
       </svg>
       <span className="leading-none">
         <span className={`block text-[19px] font-semibold tracking-tight ${word}`}>
-          soarseit
+          SoarseIT
         </span>
         <span className={`block text-[9px] font-medium tracking-[0.35em] ${sub}`}>
           CYBER DEFENSE

@@ -21,7 +21,7 @@ export default function StubPage({
         </h1>
         <p className="mt-6 max-w-[520px] text-[16px] leading-relaxed text-body">
           We&apos;re preparing more detail for this page. In the meantime, talk with
-          Soarseit about your security priorities and the Falcon capabilities that fit them.
+          SoarseIT about your security priorities and the Falcon capabilities that fit them.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button href="/">Back to home</Button>

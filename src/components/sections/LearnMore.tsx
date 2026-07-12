@@ -25,7 +25,7 @@ export default function LearnMore() {
           The complete <span className="brand-text">Falcon platform</span>
         </h2>
         <p className="mx-auto mt-6 max-w-[760px] text-center text-[16px] leading-relaxed text-white/65">
-          30+ modules across the unified Falcon platform — one console, one data layer. Expand a category to see what Soarseit can turn on for you.
+          30+ modules across the unified Falcon platform — one console, one data layer. Expand a category to see what SoarseIT can turn on for you.
         </p>
 
         <div className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">

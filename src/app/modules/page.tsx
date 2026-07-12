@@ -4,9 +4,9 @@ import Link from "next/link";
 import { moduleCategories } from "@/data/modules";
 
 export const metadata: Metadata = {
-  title: "Falcon Module Portfolio | Soarseit",
+  title: "Falcon Module Portfolio | SoarseIT",
   description:
-    "Explore the complete CrowdStrike Falcon module portfolio, delivered and operated by Soarseit.",
+    "Explore the complete CrowdStrike Falcon module portfolio, delivered and operated by SoarseIT.",
 };
 
 export default function ModulesPage() {
@@ -25,7 +25,7 @@ export default function ModulesPage() {
           </h1>
           <p className="mt-7 max-w-[760px] text-[17px] leading-relaxed text-body sm:text-[19px]">
             Every module below is part of the unified Falcon platform — one console and one data layer.
-            Soarseit licenses, deploys, tunes, and operates the ones you need.
+            SoarseIT licenses, deploys, tunes, and operates the ones you need.
           </p>
         </div>
       </section>

@@ -19,7 +19,7 @@ export default function TerminalMock() {
           <span className="h-3 w-3 rounded-full bg-[#3A4453]" />
           <span className="h-3 w-3 rounded-full bg-[#4B5566]" />
           <span className="h-3 w-3 rounded-full bg-[#5B6478]" />
-          <span className="ml-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">Soarseit SOC</span>
+          <span className="ml-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">SoarseIT SOC</span>
         </div>
 
         <div className="thin-scroll overflow-hidden px-5 py-5 font-mono text-[12px] leading-[1.8] sm:text-[13px]">
@@ -41,7 +41,7 @@ export default function TerminalMock() {
           </div>
         </div>
       </div>
-      <figcaption className="mt-3 text-center text-[12px] text-body/55">Illustrative Soarseit workflow</figcaption>
+      <figcaption className="mt-3 text-center text-[12px] text-body/55">Illustrative SoarseIT workflow</figcaption>
     </figure>
   );
 }

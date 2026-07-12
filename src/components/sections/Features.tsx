@@ -88,7 +88,7 @@ export default function Features() {
           <span className="brand-text">Every layer of the attack.</span>
         </h2>
 
-        <div role="tablist" aria-label="Soarseit capabilities" className="mt-14 flex flex-wrap justify-center gap-3">
+        <div role="tablist" aria-label="SoarseIT capabilities" className="mt-14 flex flex-wrap justify-center gap-3">
           {TABS.map((item, index) => (
             <button
               key={item.label}

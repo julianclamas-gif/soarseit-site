@@ -17,7 +17,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soarseit — Enterprise Security Powered by CrowdStrike Falcon",
+  title: "SoarseIT — Enterprise Security Powered by CrowdStrike Falcon",
   description: "Enterprise security, powered by CrowdStrike Falcon.",
 };
 
