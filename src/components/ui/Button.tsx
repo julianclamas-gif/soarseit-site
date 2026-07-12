@@ -13,11 +13,13 @@ export default function Button({
   children,
   variant = "dark",
   className = "",
+  external = false,
 }: {
   href?: string;
   children: React.ReactNode;
   variant?: "dark" | "gradient";
   className?: string;
+  external?: boolean;
 }) {
   const base =
     "group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-[15px] font-medium transition-all";
@@ -25,8 +27,11 @@ export default function Button({
     variant === "gradient"
       ? "brand-gradient rounded-full text-white shadow-[0_14px_34px_-10px_rgba(46,125,255,0.6)] hover:scale-[1.02]"
       : "bg-ink-soft text-white hover:bg-ink";
+  const externalProps = external
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
   return (
-    <Link href={href} className={`${base} ${styles} ${className}`}>
+    <Link href={href} className={`${base} ${styles} ${className}`} {...externalProps}>
       {children}
       <Arrow />
     </Link>

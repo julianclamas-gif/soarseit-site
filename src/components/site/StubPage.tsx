@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import { BOOKING_URL } from "@/lib/nav";
 
 export default function StubPage({
   eyebrow,
@@ -25,7 +26,7 @@ export default function StubPage({
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button href="/">Back to home</Button>
-          <Button href="/contact" variant="gradient">Book a briefing</Button>
+          <Button href={BOOKING_URL} external variant="gradient">Book a briefing</Button>
         </div>
       </div>
     </section>

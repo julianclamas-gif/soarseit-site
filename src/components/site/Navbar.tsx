@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { NAV } from "@/lib/nav";
+import { BOOKING_URL, NAV } from "@/lib/nav";
 import Logo from "./Logo";
 
 export default function Navbar() {
@@ -43,7 +43,9 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href="/contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="brand-gradient rounded-full px-5 py-2.5 text-[15px] font-medium text-white shadow-[0_10px_24px_-8px_rgba(46,125,255,0.62)] transition-transform hover:scale-[1.03]"
           >
             Book a briefing
@@ -94,7 +96,9 @@ export default function Navbar() {
             ))}
             <div className="grid gap-3 pt-3 sm:grid-cols-2">
               <Link
-                href="/contact"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobile}
                 className="brand-gradient rounded-full py-2.5 text-center text-sm font-medium text-white"
               >

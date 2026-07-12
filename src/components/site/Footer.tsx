@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import { BOOKING_URL } from "@/lib/nav";
 
 const COLUMNS = [
   {
@@ -24,7 +25,7 @@ const COLUMNS = [
     title: "Company",
     links: [
       { label: "contact@soarseit.com", href: "mailto:contact@soarseit.com" },
-      { label: "Book a briefing", href: "/contact" },
+      { label: "Book a briefing", href: BOOKING_URL },
       { label: "Talk to us", href: "/contact" },
     ],
   },
@@ -49,16 +50,20 @@ export default function Footer() {
             <div key={column.title}>
               <p className="text-[15px] font-semibold text-ink">{column.title}</p>
               <ul className="mt-5 space-y-3 text-[14px] text-body">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="transition-colors hover:text-brand-blue"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="transition-colors hover:text-brand-blue"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/nav";
 import TerminalMock from "./TerminalMock";
 
 export default function Hero() {
@@ -29,7 +30,9 @@ export default function Hero() {
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
           <Link
-            href="/contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="brand-gradient rounded-full px-6 py-3.5 text-[15px] font-medium text-white shadow-[0_14px_34px_-10px_rgba(46,125,255,0.65)] transition-transform hover:scale-[1.02]"
           >
             Book a briefing →

@@ -1,9 +1,22 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/nav";
 
-function ArrowLink({ href, children }: { href: string; children: React.ReactNode }) {
+function ArrowLink({
+  href,
+  children,
+  external = false,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}) {
+  const externalProps = external
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
   return (
     <Link
       href={href}
+      {...externalProps}
       className="group mt-8 inline-flex items-center rounded-xl bg-ink-soft px-6 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-cyan focus-visible:ring-offset-3"
     >
       {children}
@@ -53,7 +66,7 @@ export default function CTA() {
             <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-body">
               Map the right platform capabilities to your risks, environment, and operating model.
             </p>
-            <ArrowLink href="/contact">Book a briefing →</ArrowLink>
+            <ArrowLink href={BOOKING_URL} external>Book a briefing →</ArrowLink>
           </article>
 
           <article className="relative overflow-hidden rounded-3xl border border-brand-blue/20 bg-[linear-gradient(135deg,#e9f1ff,#f4f8ff)] p-9 shadow-[0_24px_70px_-45px_rgba(34,211,238,0.5)]">

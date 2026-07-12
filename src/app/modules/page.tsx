@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { moduleCategories } from "@/data/modules";
+import { BOOKING_URL } from "@/lib/nav";
 
 export const metadata: Metadata = {
   title: "Falcon Module Portfolio | SoarseIT",
@@ -78,7 +79,9 @@ export default function ModulesPage() {
             Not sure which modules you need?
           </h2>
           <Link
-            href="/contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="brand-gradient inline-flex shrink-0 rounded-full px-7 py-4 text-[15px] font-semibold text-white shadow-[0_14px_34px_-12px_rgba(46,125,255,0.75)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-cyan focus-visible:ring-offset-3 focus-visible:ring-offset-ink motion-reduce:transition-none"
           >
             Book a briefing →
