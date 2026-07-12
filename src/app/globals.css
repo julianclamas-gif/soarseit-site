@@ -4,24 +4,39 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-brand-purple: #7e4fff;
-  --color-brand-violet: #9958df;
-  --color-brand-magenta: #ce68a2;
+  --color-brand-blue: #2e7dff;
+  --color-brand-blue-bright: #5aa0ff;
+  --color-brand-cyan: #22d3ee;
 
-  --color-ink: #27262a;
-  --color-ink-soft: #323036;
-  --color-body: #56545c;
+  --color-ink: #0b1220;
+  --color-ink-soft: #16233b;
+  --color-body: #46536b;
 
-  --color-lav-50: #f6f4fb;
-  --color-lav-100: #efeaf7;
-  --color-lav-200: #eae7f3;
+  --color-tint-50: #f4f8ff;
+  --color-tint-100: #e9f1ff;
+  --color-tint-200: #d9e6ff;
 
-  --color-panel: #17161b;
-  --color-panel-800: #1f1e24;
-  --color-danger: #e05a63;
+  --color-panel: #070c16;
+  --color-panel-800: #0b1526;
+  --color-dark-text: #e8eef9;
 }
 
 :root {
+  --brand-blue: #2e7dff;
+  --brand-blue-bright: #5aa0ff;
+  --brand-cyan: #22d3ee;
+  --ink: #0b1220;
+  --ink-soft: #16233b;
+  --body: #46536b;
+  --dark-start: #070c16;
+  --dark-end: #0b1526;
+  --dark-text: #e8eef9;
+  --dark-muted: rgba(232, 238, 249, 0.55);
+  --tint-50: #f4f8ff;
+  --tint-100: #e9f1ff;
+  --tint-200: #d9e6ff;
+  --brand-gradient: linear-gradient(135deg, #2e7dff, #22d3ee);
+  --dark-gradient: linear-gradient(135deg, #070c16, #0b1526);
   --background: #ffffff;
   --foreground: var(--color-ink);
 }
@@ -36,10 +51,10 @@ body {
 
 /* ---- Brand helpers ---- */
 .brand-gradient {
-  background-image: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-magenta));
+  background-image: var(--brand-gradient);
 }
 .brand-text {
-  background-image: linear-gradient(130deg, var(--color-brand-purple), var(--color-brand-magenta));
+  background-image: var(--brand-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -57,8 +72,8 @@ body {
     to right,
     transparent 0,
     transparent calc(9.09% - 1px),
-    rgba(126, 79, 255, 0.06) calc(9.09% - 1px),
-    rgba(126, 79, 255, 0.06) 9.09%
+    rgba(46, 125, 255, 0.07) calc(9.09% - 1px),
+    rgba(46, 125, 255, 0.07) 9.09%
   );
 }
 

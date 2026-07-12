@@ -9,11 +9,11 @@ export default function StubPage({
 }) {
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-lav-50 via-white to-white">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-tint-50 via-white to-white">
         <div className="absolute inset-0 col-grid opacity-60" />
       </div>
       <div className="mx-auto flex min-h-[70vh] max-w-[820px] flex-col items-center justify-center px-5 py-28 text-center">
-        <span className="rounded-full bg-lav-50 px-4 py-1.5 text-[13px] font-medium uppercase tracking-wide text-brand-purple ring-1 ring-lav-200">
+        <span className="rounded-full bg-tint-50 px-4 py-1.5 text-[13px] font-medium uppercase tracking-wide text-brand-blue ring-1 ring-tint-200">
           {eyebrow}
         </span>
         <h1 className="display mt-7 text-[46px] sm:text-[64px]">

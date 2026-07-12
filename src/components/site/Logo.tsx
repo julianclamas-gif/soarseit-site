@@ -20,14 +20,14 @@ export default function Logo({
         className="shrink-0"
       >
         <defs>
-          <linearGradient id="lg" x1="0" y1="0" x2="40" y2="40">
-            <stop offset="0" stopColor="#7e4fff" />
-            <stop offset="1" stopColor="#ce68a2" />
+          <linearGradient id="soarseit-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+            <stop offset="0" stopColor="#2E7DFF" />
+            <stop offset="1" stopColor="#22D3EE" />
           </linearGradient>
         </defs>
         <g
           transform="rotate(45 20 20)"
-          stroke="url(#lg)"
+          stroke="url(#soarseit-logo-gradient)"
           strokeWidth="3.4"
           fill="none"
         >
@@ -37,10 +37,10 @@ export default function Logo({
       </svg>
       <span className="leading-none">
         <span className={`block text-[19px] font-semibold tracking-tight ${word}`}>
-          symbiotic
+          soarseit
         </span>
         <span className={`block text-[9px] font-medium tracking-[0.35em] ${sub}`}>
-          SECURITY
+          CYBER DEFENSE
         </span>
       </span>
     </Link>

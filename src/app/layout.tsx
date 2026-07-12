@@ -17,9 +17,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Symbiotic Security — End to End security for AI coding",
-  description:
-    "Symbiotic is the AI coding solution for organizations that care about their data, people, and customers. Generate compliant, secure code while making you extraordinarily productive.",
+  title: "Soarseit — Enterprise Security Powered by CrowdStrike Falcon",
+  description: "Enterprise security, powered by CrowdStrike Falcon.",
 };
 
 export default function RootLayout({
