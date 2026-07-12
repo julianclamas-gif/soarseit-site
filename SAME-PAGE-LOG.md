@@ -65,3 +65,12 @@ VERDICT: NOT YET
 - ACCEPTED: Rock 2 "placeholder wordmarks" -> reworded to "render industry labels; no customer-style wordmarks."
 - ACCEPTED: Rock 3 CTA composition -> Rock 3 now appends CTA after Features (Hero, TrustedBy, ProblemPanels, Stats, Features, CTA).
 - ACCEPTED: Rock 4 /modules proof -> Rock 4 proof now checks the `See all modules` href == /modules; full navigation verified in Rock 5.
+
+## Round 3
+### Integrator findings (Codex, verbatim)
+- [FIX] The final "no red anywhere" audit still omits the known red gradient values `#c94b54` and `#e07b82` currently used in `ProblemPanels`, so proof can pass while red remains -> Add both values to the Rock 5 scoped audit pattern.
+
+VERDICT: NOT YET
+
+### Visionary response (Fable)
+- ACCEPTED: Rock 5 final audit grep now includes `#c94b54|#e07b82` (the ProblemPanels bar-gradient reds).

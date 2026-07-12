@@ -97,6 +97,7 @@ every internal link resolves.
 **Proof:** `npm run build` exits 0; `/modules` renders all nine category groups with their module
 cards; `/why-soarseit` and `/contact` return 200 with blue Soarseit copy; a crawl of every header/
 footer/CTA/`mailto` link on `/`, `/modules`, `/why-soarseit`, `/contact` finds no dead internal
-route. **FINAL repo-wide audit (this rock):** `grep -rniE 'symbiotic|7e4fff|ce68a2|brand-purple|brand-magenta|--color-danger|#e05a63|#ff5f57' src/`
-returns nothing (all base brand/purple/red fully gone across the whole app). (Fable screenshots +
+route. **FINAL repo-wide audit (this rock):** `grep -rniE 'symbiotic|7e4fff|ce68a2|brand-purple|brand-magenta|--color-danger|#e05a63|#ff5f57|#c94b54|#e07b82' src/`
+returns nothing (all base brand/purple/red — including the ProblemPanels bar-gradient reds — fully
+gone across the whole app). (Fable screenshots +
 link crawl + repo-wide grep.)
