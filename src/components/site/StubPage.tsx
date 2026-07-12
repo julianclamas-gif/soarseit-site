@@ -20,12 +20,12 @@ export default function StubPage({
           <span className="brand-text">{title}</span>
         </h1>
         <p className="mt-6 max-w-[520px] text-[16px] leading-relaxed text-body">
-          This page is a placeholder in the clone. The homepage is the fully built,
-          pixel-faithful recreation — these routes exist so the navigation works end to end.
+          We&apos;re preparing more detail for this page. In the meantime, talk with
+          Soarseit about your security priorities and the Falcon capabilities that fit them.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button href="/">Back to home</Button>
-          <Button href="/contact" variant="gradient">Book a demo</Button>
+          <Button href="/contact" variant="gradient">Book a briefing</Button>
         </div>
       </div>
     </section>

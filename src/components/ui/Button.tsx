@@ -23,7 +23,7 @@ export default function Button({
     "group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-[15px] font-medium transition-all";
   const styles =
     variant === "gradient"
-      ? "brand-gradient rounded-full text-white shadow-[0_14px_34px_-10px_rgba(126,79,255,0.6)] hover:scale-[1.02]"
+      ? "brand-gradient rounded-full text-white shadow-[0_14px_34px_-10px_rgba(46,125,255,0.6)] hover:scale-[1.02]"
       : "bg-ink-soft text-white hover:bg-ink";
   return (
     <Link href={href} className={`${base} ${styles} ${className}`}>
