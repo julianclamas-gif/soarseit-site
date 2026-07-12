@@ -21,6 +21,11 @@
 - Dark section bg: `#070C16` → `#0B1526` (gradient), cyan/blue glow blobs
 - Light tints: `--tint-50: #F4F8FF`, `--tint-100: #E9F1FF`, `--tint-200: #D9E6FF`
 - Dark-section accents: text on dark is `#E8EEF9` / muted `rgba(232,238,249,.55)`
+- **No red anywhere.** The base uses red for "danger" (the gauge arc, the "repeated gaps" bars) and
+  red macOS window dots. Recolor all of it: danger/urgent accent = **cyan `#22D3EE`** (with a hotter
+  `#38BDF8→#22D3EE` gradient for bars/gauge); terminal/console window dots = neutral greys
+  (`#3A4453` / `#4B5566` / `#5B6478`) — no traffic-light red/amber/green. Remove the base
+  `--color-danger` token.
 
 ## Navigation (minimal)
 - **Modules** → `/modules` (the full portfolio page)

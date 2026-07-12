@@ -24,20 +24,27 @@ in-copy this cycle; formal legal/brand sign-off before public launch is deferred
 `Navbar` to minimal nav (Modules · Why Soarseit · Contact) with `Book a briefing` (gradient) +
 `Talk to us` (outline) buttons; drop the old dropdown data. Rebuild `Footer` with the CONTENT
 columns + tagline + trademark line. Update `layout.tsx` metadata (title/description) and any
-brand-text/gradient utility classes.
-**Done looks like:** Homepage shell is fully Soarseit + blue; no purple/red remains anywhere; no
-references to "Symbiotic" in shown UI.
-**Proof:** `npm run build` exits 0; `grep -rniE 'symbiotic|7e4fff|ce68a2|brand-purple|brand-magenta' src/`
+brand-text/gradient utility classes. **Remove the base `--color-danger` red token** from
+`globals.css` and define the danger/urgent accent as cyan `#22D3EE` (per CONTENT); leave the
+component-level red recolors (panels, console dots) to Rocks 2/3 but the token must be gone here.
+**Done looks like:** Shell/theme files are fully Soarseit + blue with no purple/red tokens.
+(Homepage sections still carry base content until Rocks 2–3 — that's expected; the repo-wide
+audit is Rock 5.)
+**Proof:** `npm run build` exits 0; grep **scoped to shell/theme files**
+(`globals.css layout.tsx src/components/site/`) for `symbiotic|7e4fff|ce68a2|brand-purple|brand-magenta|--color-danger|#e05a63|#ff5f57`
 returns nothing; on the production server `/` shows the `soarseit` wordmark, blue gradient
-`Book a briefing` button, and footer trademark line. (Fable screenshots + grep.)
+`Book a briefing` button, and footer trademark line. (Fable screenshots + scoped grep.)
 
 ## Rock 2 — Homepage narrative (hero + trust + threat panels + stats)
 **Do:** Rewrite `Hero` to the two-line headline (`Secure the AI era.` / `Run an AI-native SOC.`),
 subhead, eyebrow `Powered by CrowdStrike Falcon`, CTAs, and reskin the terminal into the SOC
-console mock with the CONTENT feed lines (CSS-staggered, left-aligned). Rewrite `TrustedBy` copy +
-placeholder wordmarks. Rewrite the three `ProblemPanels` to the CONTENT threat narrative (51-sec
-gauge; shadow-AI discovery list; blue "repeated gaps" bars). Rewrite `Stats` to the three CONTENT
-stats. Keep the `ProblemPanels` framer scroll-scale; bars/lists are CSS. Include the stats-band
+console mock with the CONTENT feed lines (CSS-staggered, left-aligned; console dots recolored to
+neutral grey — no red). Rewrite `TrustedBy` to render **industry labels** (Financial Services,
+Healthcare, ...) — no customer-style wordmarks. Rewrite the three `ProblemPanels` to the CONTENT
+threat narrative (51-sec gauge; shadow-AI discovery list; "repeated gaps" bars) and **recolor all
+red danger visuals to cyan `#22D3EE` / blue** per CONTENT. Rewrite `Stats` to the CONTENT stats
+(1-10-60, 150+, 24/7) with the attribution footnote. Keep the `ProblemPanels` framer scroll-scale;
+bars/lists/gauge are CSS. Include the stats-band
 footnote attribution and the panel-1 "as reported by CrowdStrike" caption from CONTENT. **Update
 `src/app/page.tsx`: delete `ProductCards` from the composition** (it is the base's Symbiotic
 narrative); order becomes Hero → TrustedBy → ProblemPanels → Stats.
@@ -53,7 +60,9 @@ AI Detection & Response, Charlotte AI) with their taglines/bodies and the reskin
 player. Rewrite the closing `CTA` section (`Outpace the adversary.`, briefing card + Why-Soarseit card).
 Tab switching stays React state (works in production); no framer mount animations. **Tab a11y
 (required):** `role="tablist"`/`tab`/`tabpanel`, `aria-selected`, roving `tabindex` with
-Left/Right arrow-key navigation, and a visible focus ring. Update `page.tsx` to add Features after Stats.
+Left/Right arrow-key navigation, and a visible focus ring. **Update `page.tsx` composition:** append
+Features after Stats AND append the reworked CTA after Features → Hero, TrustedBy, ProblemPanels,
+Stats, Features, CTA. (LearnMore is inserted between Features and CTA in Rock 4.)
 **Done looks like:** Five working, keyboard-navigable capability tabs + a rebranded closing CTA, all blue.
 **Proof:** `npm run build` exits 0; on the production server clicking a second tab swaps the
 tagline/body text AND Arrow-key navigation moves selection; the closing CTA renders both cards.
@@ -72,8 +81,9 @@ and CTA.
 **Done looks like:** Visitors expand any of the nine categories inline (mouse or keyboard) and click
 through to the full page; dataset is reusable by Rock 5.
 **Proof:** `npm run build` exits 0; on the production server clicking a category row toggles its
-`aria-expanded` and reveals module chips, keyboard (Enter/Space) does the same, and `See all modules`
-navigates to `/modules`. (Fable interactivity + keyboard/aria check.)
+`aria-expanded` and reveals module chips, keyboard (Enter/Space) does the same, and the
+`See all modules` control has `href="/modules"` (full navigation is verified in Rock 5, which builds
+that route). (Fable interactivity + keyboard/aria check.)
 
 ## Rock 5 — Full /modules page + stub pages
 **Do:** Build `/modules`: hero + the full grouped portfolio rendered from `src/data/modules.ts`
@@ -87,4 +97,6 @@ every internal link resolves.
 **Proof:** `npm run build` exits 0; `/modules` renders all nine category groups with their module
 cards; `/why-soarseit` and `/contact` return 200 with blue Soarseit copy; a crawl of every header/
 footer/CTA/`mailto` link on `/`, `/modules`, `/why-soarseit`, `/contact` finds no dead internal
-route and no leftover base copy. (Fable screenshots + link crawl.)
+route. **FINAL repo-wide audit (this rock):** `grep -rniE 'symbiotic|7e4fff|ce68a2|brand-purple|brand-magenta|--color-danger|#e05a63|#ff5f57' src/`
+returns nothing (all base brand/purple/red fully gone across the whole app). (Fable screenshots +
+link crawl + repo-wide grep.)

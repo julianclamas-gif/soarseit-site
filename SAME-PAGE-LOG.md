@@ -48,3 +48,20 @@ VERDICT: NOT YET
 - ACCEPTED: Rock 5 link coverage -> Rock 5 proof adds a crawl of all header/footer/CTA/mailto links across the four routes.
 - RESOLVED (CLARIFY): LinkedIn URL -> omit external social this cycle; email is `mailto:contact@soarseit.com`, other company links -> /contact. Logged in ISSUES.md.
 - ACCEPTED: page.tsx composition -> final composition documented at top of PLAN; each rock updates it explicitly.
+
+## Round 2
+### Integrator findings (Codex, verbatim)
+- [FIX] Rock 1's repository-wide legacy-brand grep cannot pass because Symbiotic content remains in homepage sections until Rocks 2–3 -> Scope Rock 1's grep to shell/theme files and run the repository-wide check after Rock 5.
+- [FIX] Rock 1 mandates removing all red but its proof only searches purple names and hex values, allowing existing `danger` utilities and red hex colors to survive -> Add checks for `danger` tokens/classes and existing red hex values, plus a final visual color audit.
+- [FIX] Rock 2 still says "placeholder wordmarks," contradicting CONTENT's explicit industry-label requirement -> Replace that instruction with "render industry labels; no customer-style wordmarks."
+- [FIX] Rock 3 rewrites CTA but its composition instruction only adds Features after Rock 2 removed everything below Stats -> Explicitly append CTA after Features in Rock 3's `page.tsx` composition.
+- [FIX] Rock 4's proof requires `/modules` navigation to work even though Rock 5 creates that route -> Create a temporary `/modules` route shell in Rock 4 or defer the navigation-success proof to Rock 5.
+
+VERDICT: NOT YET
+
+### Visionary response (Fable)
+- ACCEPTED: Rock 1 grep scope -> Rock 1 grep now scoped to shell/theme files (globals.css, layout.tsx, src/components/site/); full repo-wide audit moved to Rock 5 final proof.
+- ACCEPTED: red/danger audit -> Rock 1 removes `--color-danger`; grep now includes `--color-danger|#e05a63|#ff5f57`; CONTENT specifies cyan recolor for danger visuals + neutral console dots; Rock 2 recolors panels; Rock 5 final grep covers red.
+- ACCEPTED: Rock 2 "placeholder wordmarks" -> reworded to "render industry labels; no customer-style wordmarks."
+- ACCEPTED: Rock 3 CTA composition -> Rock 3 now appends CTA after Features (Hero, TrustedBy, ProblemPanels, Stats, Features, CTA).
+- ACCEPTED: Rock 4 /modules proof -> Rock 4 proof now checks the `See all modules` href == /modules; full navigation verified in Rock 5.
