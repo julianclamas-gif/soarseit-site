@@ -1,29 +1,6 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/nav";
 
-function ArrowLink({
-  href,
-  children,
-  external = false,
-}: {
-  href: string;
-  children: React.ReactNode;
-  external?: boolean;
-}) {
-  const externalProps = external
-    ? { target: "_blank", rel: "noopener noreferrer" }
-    : {};
-  return (
-    <Link
-      href={href}
-      {...externalProps}
-      className="group mt-8 inline-flex items-center rounded-xl bg-ink-soft px-6 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-cyan focus-visible:ring-offset-3"
-    >
-      {children}
-    </Link>
-  );
-}
-
 function SoarseITMark() {
   return (
     <svg aria-hidden="true" width="52" height="52" viewBox="0 0 52 52" fill="none">
@@ -38,6 +15,37 @@ function SoarseITMark() {
     </svg>
   );
 }
+
+function ArrowIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+const PATHS = [
+  {
+    label: "Schedule a free Active Directory risk review",
+    desc: "See exactly where your identity attack surface is exposed.",
+    free: true,
+  },
+  {
+    label: "Schedule an intro call",
+    desc: "Not sure where to start? We'll map Falcon to your environment on a quick call.",
+    free: false,
+  },
+  {
+    label: "Schedule a free trial",
+    desc: "Put Falcon to work in your own environment before you commit.",
+    free: true,
+  },
+  {
+    label: "Schedule an AI vulnerability check",
+    desc: "Find where shadow AI and prompt-injection risks live — and how to safeguard against them.",
+    free: false,
+  },
+];
 
 export default function CTA() {
   return (
@@ -54,34 +62,34 @@ export default function CTA() {
           <span className="brand-text">the adversary.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-[700px] text-center text-[16px] leading-relaxed text-body">
-          Book a briefing and we&apos;ll map the Falcon modules to your environment — and stand up your AI-native SOC.
+          Every path leads to the same 30-minute call — pick the one that fits where you are.
         </p>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          <article className="rounded-3xl border border-tint-200 bg-white p-9 shadow-[0_24px_70px_-45px_rgba(46,125,255,0.45)]">
-            <span className="inline-flex rounded-full bg-tint-100 px-4 py-1.5 text-[13px] font-medium text-brand-blue">
-              Briefing
-            </span>
-            <h3 className="mt-8 text-[30px] font-semibold tracking-tight text-ink">Build your Falcon roadmap.</h3>
-            <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-body">
-              Map the right platform capabilities to your risks, environment, and operating model.
-            </p>
-            <ArrowLink href={BOOKING_URL} external>Book a briefing →</ArrowLink>
-          </article>
-
-          <article className="relative overflow-hidden rounded-3xl border border-brand-blue/20 bg-[linear-gradient(135deg,#e9f1ff,#f4f8ff)] p-9 shadow-[0_24px_70px_-45px_rgba(34,211,238,0.5)]">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-cyan/10 blur-3xl" />
-            <div className="relative">
-              <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-[13px] font-medium text-brand-blue ring-1 ring-brand-blue/15">
-                Why SoarseIT
-              </span>
-              <h3 className="mt-8 text-[30px] font-semibold tracking-tight text-ink">One partner. Every stage.</h3>
-              <p className="mt-4 max-w-[480px] text-[15px] leading-relaxed text-body">
-                One partner for licensing, deployment, tuning, and 24/7 operations — so your team runs the business, not the tooling.
-              </p>
-              <ArrowLink href="/why-soarseit">Why SoarseIT →</ArrowLink>
-            </div>
-          </article>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+          {PATHS.map((p) => (
+            <Link
+              key={p.label}
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col rounded-2xl border border-tint-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-[0_28px_70px_-45px_rgba(46,125,255,0.55)] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-cyan focus-visible:ring-offset-2"
+            >
+              <div className="flex items-start justify-between gap-3">
+                {p.free ? (
+                  <span className="inline-flex rounded-full bg-tint-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-blue ring-1 ring-tint-200">
+                    Free
+                  </span>
+                ) : (
+                  <span />
+                )}
+                <ArrowIcon className="shrink-0 text-brand-blue/40 transition-all group-hover:translate-x-0.5 group-hover:text-brand-blue" />
+              </div>
+              <h3 className="mt-5 text-[20px] font-semibold leading-snug tracking-tight text-ink">
+                {p.label}
+              </h3>
+              <p className="mt-3 text-[14px] leading-relaxed text-body">{p.desc}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
