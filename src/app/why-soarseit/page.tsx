@@ -3,9 +3,9 @@ import Link from "next/link";
 import { BOOKING_URL } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "Why SoarseIT | Enterprise security at boutique speed",
+  title: "Why SoarseIT | The fast way to CrowdStrike Falcon",
   description:
-    "The full CrowdStrike Falcon platform, delivered by a partner small enough to move fast: quick meetings, quotes in days, one direct line, and no enterprise procurement slog.",
+    "The full CrowdStrike Falcon platform, delivered fast: quick meetings, quotes in days, one direct line, and no enterprise procurement slog.",
 };
 
 const PILLARS = [
@@ -68,8 +68,8 @@ export default function Page() {
           </h1>
           <p className="mx-auto mt-7 max-w-[720px] text-[17px] leading-relaxed text-body sm:text-[19px]">
             You get CrowdStrike&apos;s world-class Falcon platform — deployed, managed, and run
-            24/7 by CrowdStrike. You get it through a partner small enough to move fast, answer
-            directly, and scope only what you need.
+            24/7 by CrowdStrike. You get it through a partner that moves fast, answers directly,
+            and scopes to exactly what you need.
           </p>
           <div className="mt-9 flex justify-center">
             <Link
@@ -99,7 +99,7 @@ export default function Page() {
       <section className="bg-tint-50 py-20 sm:py-24">
         <div className="mx-auto max-w-[1100px] px-5">
           <h2 className="display mx-auto max-w-[760px] text-center text-[32px] sm:text-[46px]">
-            What being small <span className="brand-text">gets you</span>
+            Built for <span className="brand-text">speed and access</span>
           </h2>
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {PILLARS.map((p) => (
@@ -134,15 +134,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Small on purpose */}
+      {/* Fast by design */}
       <section className="bg-ink py-20 text-white sm:py-24">
         <div className="mx-auto max-w-[860px] px-5 text-center">
-          <h2 className="display text-[32px] text-white sm:text-[46px]">Small on purpose.</h2>
+          <h2 className="display text-[32px] text-white sm:text-[46px]">Fast by design.</h2>
           <p className="mx-auto mt-6 max-w-[720px] text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
             The security is CrowdStrike — the same platform trusted by the world&apos;s largest
-            enterprises and governments. What being small changes is everything around it: how fast
-            you can start, how easily you reach a human, and how precisely it&apos;s scoped to you.
-            Small isn&apos;t the compromise. It&apos;s the reason it&apos;s this fast.
+            enterprises and governments. What we change is everything around it: how fast you can
+            start, how easily you reach a human, and how precisely it&apos;s scoped to you. The
+            protection is enterprise-grade. Getting there just isn&apos;t slow.
           </p>
         </div>
       </section>
