@@ -74,14 +74,7 @@ export default function CTA() {
               rel="noopener noreferrer"
               className="group flex flex-col rounded-2xl border border-tint-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-[0_28px_70px_-45px_rgba(46,125,255,0.55)] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-cyan focus-visible:ring-offset-2"
             >
-              <div className="flex items-start justify-between gap-3">
-                {p.free ? (
-                  <span className="inline-flex rounded-full bg-tint-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-blue ring-1 ring-tint-200">
-                    Free
-                  </span>
-                ) : (
-                  <span />
-                )}
+              <div className="flex justify-end">
                 <ArrowIcon className="shrink-0 text-brand-blue/40 transition-all group-hover:translate-x-0.5 group-hover:text-brand-blue" />
               </div>
               <h3 className="mt-5 text-[20px] font-semibold leading-snug tracking-tight text-ink">
