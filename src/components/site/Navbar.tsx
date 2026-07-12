@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BOOKING_URL, NAV } from "@/lib/nav";
+import { BOOKING_PATHS } from "@/lib/paths";
+import ChoosePath from "./ChoosePath";
 import CoBrand from "./CoBrand";
 
 export default function Navbar() {
@@ -41,21 +43,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="brand-gradient rounded-full px-5 py-2.5 text-[15px] font-medium text-white shadow-[0_10px_24px_-8px_rgba(46,125,255,0.62)] transition-transform hover:scale-[1.03]"
-          >
-            Book a briefing
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full border border-brand-blue/35 bg-white px-5 py-2.5 text-[15px] font-medium text-ink-soft transition-colors hover:border-brand-blue hover:text-brand-blue"
-          >
-            Talk to us
-          </Link>
+        <div className="hidden lg:block">
+          <ChoosePath />
         </div>
 
         <button
@@ -94,23 +83,22 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <div className="grid gap-3 pt-3 sm:grid-cols-2">
-              <Link
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobile}
-                className="brand-gradient rounded-full py-2.5 text-center text-sm font-medium text-white"
-              >
-                Book a briefing
-              </Link>
-              <Link
-                href="/contact"
-                onClick={closeMobile}
-                className="rounded-full border border-brand-blue/35 py-2.5 text-center text-sm font-medium text-ink-soft"
-              >
-                Talk to us
-              </Link>
+            <div className="space-y-2 pt-3">
+              <p className="px-2 pb-1 text-[12px] font-semibold uppercase tracking-wide text-body/60">
+                Choose your path
+              </p>
+              {BOOKING_PATHS.map((p) => (
+                <Link
+                  key={p.label}
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMobile}
+                  className="block rounded-lg bg-tint-50 px-3 py-2.5 text-[14px] font-medium text-ink"
+                >
+                  {p.label}
+                </Link>
+              ))}
             </div>
           </div>
         </nav>

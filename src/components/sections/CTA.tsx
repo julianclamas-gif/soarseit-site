@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/nav";
+import { BOOKING_PATHS } from "@/lib/paths";
 
 function SoarseITMark() {
   return (
@@ -24,29 +25,6 @@ function ArrowIcon({ className = "" }: { className?: string }) {
   );
 }
 
-const PATHS = [
-  {
-    label: "Schedule a free Active Directory risk review",
-    desc: "See exactly where your identity attack surface is exposed.",
-    free: true,
-  },
-  {
-    label: "Schedule an intro call",
-    desc: "Not sure where to start? We'll map Falcon to your environment on a quick call.",
-    free: false,
-  },
-  {
-    label: "Schedule a free trial",
-    desc: "Put Falcon to work in your own environment before you commit.",
-    free: true,
-  },
-  {
-    label: "Schedule an AI vulnerability check",
-    desc: "Find where shadow AI and prompt-injection risks live — and how to safeguard against them.",
-    free: false,
-  },
-];
-
 export default function CTA() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-tint-50 to-white py-24">
@@ -66,7 +44,7 @@ export default function CTA() {
         </p>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
-          {PATHS.map((p) => (
+          {BOOKING_PATHS.map((p) => (
             <Link
               key={p.label}
               href={BOOKING_URL}
