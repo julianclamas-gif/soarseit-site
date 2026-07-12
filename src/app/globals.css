@@ -63,7 +63,8 @@ body {
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.02;
-  color: var(--color-ink);
+  /* No hard-coded color: headings inherit --foreground (ink) on light sections,
+     and can be overridden with text-white/etc. on dark sections. */
 }
 
 /* Faint vertical column grid used across light sections */
