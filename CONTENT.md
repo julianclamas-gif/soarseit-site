@@ -39,7 +39,7 @@
 - Subhead: "Soarseit delivers the CrowdStrike Falcon platform end to end — stopping identity attacks, shadow AI, and prompt-injection threats while an AI-native SOC hunts, triages, and responds 24/7. Deployed, managed, and operated for you."
 - Micro line (italic, muted): "One platform. One agent. Every workload."
 - Primary CTA: `Book a briefing →`  ·  secondary text link: `Explore the modules →` (to /modules)
-- Hero visual: a dark **Falcon-style SOC console** mock (reuse the terminal component, reskinned): a detection feed with lines like an incident triage — Charlotte AI summarizing a detection, identity risk, containment action. CSS-staggered reveal. Left-aligned mono.
+- Hero visual: a dark, **illustrative Soarseit SOC console** mock (reuse the terminal component, reskinned) — NOT a reproduction of CrowdStrike's product UI or trade dress. A detection feed with lines like an incident triage: Charlotte AI summarizing a detection, identity risk, containment action. CSS-staggered reveal. Left-aligned mono. Add a small muted caption below it: "Illustrative Soarseit workflow."
 
 Console mock lines (mono, syntax-colored):
 ```
@@ -54,15 +54,15 @@ Console mock lines (mono, syntax-colored):
 ```
 Input row placeholder: `Ask Charlotte AI…`
 
-### Trusted-by strip
-- Heading: "Trusted by teams that can't afford a breach"
-- Note under logos (muted): "Protecting identities, endpoints, clouds, and AI across regulated industries."
-- Logo wordmarks (placeholder text logos): `NORTHWIND` · `Sable Bank` · `Halcyon Health` · `Meridian` · `Orbit Freight` · `Vantage`
+### Trusted-by / industries strip  (NOTE: no invented customers — use industry labels only)
+- Heading: "Built for teams that can't afford a breach"
+- Note under labels (muted): "Protecting identities, endpoints, clouds, and AI across regulated industries."
+- Industry labels (NOT customer names): `Financial Services` · `Healthcare` · `Critical Infrastructure` · `SaaS & Technology` · `Public Sector` · `Manufacturing`
 
 ### Threat narrative — three stacked dark panels (reuse ProblemPanels, reskinned blue)
 Panel 1 — heading "The adversary now moves in minutes, not days"
 body: "The fastest eCrime breakout time is under an hour. Attackers log in with stolen identities instead of breaking in — and legacy tools that alert after the fact can't keep up."
-visual: a gauge/stat — big number **"51 sec"** with label "fastest recorded breakout time" and "Your window to respond is closing."
+visual: a gauge/stat — big number **"51 sec"** with label "fastest recorded eCrime breakout time" and a small muted caption "as reported by CrowdStrike" plus the line "Your window to respond is closing."
 
 Panel 2 — heading "Shadow AI is your new unmanaged attack surface"
 body: "Employees are wiring LLMs and copilots into real workflows faster than security can see them. Every unsanctioned model, agent, and API key expands what an attacker can reach — and what can be leaked."
@@ -78,9 +78,10 @@ body: "Identity, endpoint, cloud, and AI signals live in silos, so real attacks 
 visual: "Repeated gaps" bars (blue gradient): `Identity blind spots`, `Alert fatigue`, `Siloed telemetry` — all near-full.
 
 ### Stats band (blue gradient cards)
-- `1 hr` — "median time to contain with Falcon Complete MDR"
-- `150+` — "adversaries tracked by Counter Adversary Operations"
+- `1·10·60` — "the benchmark our SOC operates to: detect in 1, triage in 10, contain in 60 minutes"
+- `150+` — "adversary groups tracked by Counter Adversary Operations"
 - `24/7` — "expert-led detection and response, every day"
+- Small muted footnote under the band: "The 1-10-60 benchmark and adversary figures reflect CrowdStrike's published frameworks and threat research (CrowdStrike Global Threat Report). Results vary by environment."
 
 ### Capabilities — tabbed feature switcher (reuse Features, reskinned)
 Section heading (two-tone): `One platform.` / `Every layer of the attack.`
@@ -94,9 +95,10 @@ Tabs (each has tagline + body):
 
 ### "Learn More" — expandable modules preview (NEW, key feature)
 - Section heading: `The complete Falcon platform`
-- Subhead: "40+ modules on one agent and one console. Expand a category to see what Soarseit can turn on for you."
-- An **accordion**: one row per category (see MODULE PORTFOLIO below). Collapsed by default; clicking expands to reveal that category's module chips (name + one-line description). Smooth CSS height/opacity; a chevron rotates. Multiple can be open.
-- Category rows to render (counts derived from portfolio): Endpoint Security & XDR · Identity Protection · Cloud Security · Next-Gen SIEM & SOC · Threat Intelligence · Exposure Management · AI & Data Protection · Managed Services.
+- Subhead: "30+ modules across the unified Falcon platform — one console, one data layer. Expand a category to see what Soarseit can turn on for you."
+- An **accordion**: one row per category (see MODULE PORTFOLIO below). Collapsed by default; clicking expands to reveal that category's module chips (name + one-line description). Multiple can be open.
+- Disclosure mechanics (REQUIRED): use the CSS `grid-template-rows: 0fr → 1fr` reveal pattern (or native `<details>`), so it works with unknown/dynamic content height. The trigger is a real `<button>` with `aria-expanded` and `aria-controls`; the panel has a matching `id`; a chevron rotates via CSS. Keyboard-operable (Enter/Space) and honors `prefers-reduced-motion`.
+- Render ALL NINE categories (source of truth = the shared modules dataset): Endpoint Security & XDR · Identity Protection · Cloud Security · Next-Gen SIEM & SOC · Threat Intelligence · Exposure Management · AI & Data Protection · Managed Services · SaaS Security.
 - Below the accordion, a prominent CTA button: `See all modules →` → `/modules`.
 
 ### Closing CTA
@@ -106,14 +108,14 @@ Tabs (each has tagline + body):
 
 ### Footer
 - Wordmark + "Enterprise security, powered by CrowdStrike Falcon."
-- Columns: **Explore** (Modules, Why Soarseit, Contact) · **Platform** (Identity Protection, Next-Gen SIEM, EDR/MDR, AI Detection & Response, Charlotte AI → all to /modules) · **Company** (contact@soarseit.com, LinkedIn, Book a briefing).
+- Columns: **Explore** (Modules, Why Soarseit, Contact) · **Platform** (Identity Protection, Next-Gen SIEM, EDR/MDR, AI Detection & Response, Charlotte AI → all to /modules) · **Company** (`contact@soarseit.com` as a `mailto:` link, `Book a briefing` → /contact, `Talk to us` → /contact). NOTE: do NOT add a LinkedIn/external social link this cycle — no approved URL exists.
 - Bottom: "© Soarseit 2026" + the trademark line above.
 
 ---
 
 ## MODULES PAGE (`/modules`)
 
-- Hero: eyebrow `Powered by CrowdStrike Falcon`; H1 (two-tone) `The full Falcon` / `module portfolio`; sub: "Every module below runs on one lightweight agent and one unified console. Soarseit licenses, deploys, tunes, and operates the ones you need."
+- Hero: eyebrow `Powered by CrowdStrike Falcon`; H1 (two-tone) `The full Falcon` / `module portfolio`; sub: "Every module below is part of the unified Falcon platform — one console and one data layer. Soarseit licenses, deploys, tunes, and operates the ones you need."
 - Then the portfolio, **grouped by category**. Each category is a section header + a responsive grid of module cards (name, category tag, 1–2 sentence description).
 - Sticky mini in-page category nav is a nice-to-have (only if cheap).
 - Closing CTA band: `Not sure which modules you need? → Book a briefing`.
@@ -164,8 +166,10 @@ Tabs (each has tagline + body):
 
 **Managed Services**
 - *Falcon Complete MDR* — Fully managed 24/7 detection, hunting, and response run by CrowdStrike experts as an extension of your team.
-- *Falcon OverWatch* — Human-led managed threat hunting that finds the stealthiest hands-on-keyboard attacks.
+- *Falcon Complete Next-Gen SIEM* — Managed operation and tuning of Next-Gen SIEM, run for you around the clock.
 - *CrowdStrike Services* — Incident response and proactive services to prepare for, respond to, and recover from breaches.
+
+(Note: managed threat hunting lives under Threat Intelligence as *Falcon Adversary OverWatch* — do not duplicate it here.)
 
 **SaaS Security**
 - *Falcon Shield* — SaaS security posture management (SSPM) that secures identities, configs, and data across your SaaS estate.
