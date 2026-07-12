@@ -3,6 +3,7 @@ import TrustedBy from "@/components/sections/TrustedBy";
 import Stats from "@/components/sections/Stats";
 import ProblemPanels from "@/components/sections/ProblemPanels";
 import Features from "@/components/sections/Features";
+import LearnMore from "@/components/sections/LearnMore";
 import CTA from "@/components/sections/CTA";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <ProblemPanels />
       <Stats />
       <Features />
+      <LearnMore />
       <CTA />
     </>
   );
