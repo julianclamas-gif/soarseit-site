@@ -1,29 +1,25 @@
 const STATS = [
-  { big: "93%", label: "Reduction in AI-generated vulnerabilities" },
-  { big: "12x", label: "More complex vulnerabilities fixed correctly by default" },
-  { big: "27", label: "hours saved per developer per month on reviewing, re-prompting, fixing issues" },
+  { big: "1·10·60", label: "the benchmark our SOC operates to: detect in 1, triage in 10, contain in 60 minutes" },
+  { big: "150+", label: "adversary groups tracked by Counter Adversary Operations" },
+  { big: "24/7", label: "expert-led detection and response, every day" },
 ];
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-white pb-10 pt-4">
+    <section className="relative overflow-hidden bg-white pb-24 pt-4">
       <div className="absolute inset-0 col-grid opacity-50" />
       <div className="relative mx-auto max-w-[1240px] px-5">
-        <h2 className="display mx-auto max-w-[960px] text-center text-[34px] sm:text-[48px] lg:text-[58px]">
-          Symbiotic Security Leads in <span className="brand-text">Securing AI Code</span>
-        </h2>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {STATS.map((s) => (
-            <div
-              key={s.big}
-              className="rounded-3xl bg-[linear-gradient(150deg,#8a5cff,#9b57d6)] p-9 text-center text-white shadow-[0_24px_60px_-24px_rgba(126,79,255,0.6)]"
-            >
-              <div className="text-[64px] font-semibold leading-none tracking-tight">{s.big}</div>
-              <p className="mx-auto mt-4 max-w-[240px] text-[14px] leading-snug text-white/85">{s.label}</p>
+        <div className="grid gap-6 md:grid-cols-3">
+          {STATS.map((stat) => (
+            <div key={stat.big} className="rounded-3xl bg-[linear-gradient(145deg,#2E7DFF,#22D3EE)] p-9 text-center text-white shadow-[0_24px_60px_-24px_rgba(46,125,255,0.55)]">
+              <div className="text-[58px] font-semibold leading-none tracking-tight sm:text-[64px]">{stat.big}</div>
+              <p className="mx-auto mt-4 max-w-[280px] text-[14px] leading-snug text-white/85">{stat.label}</p>
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-7 max-w-[900px] text-center text-[12px] leading-relaxed text-body/60">
+          The 1-10-60 benchmark and adversary figures reflect CrowdStrike&apos;s published frameworks and threat research (CrowdStrike Global Threat Report). Results vary by environment.
+        </p>
       </div>
     </section>
   );

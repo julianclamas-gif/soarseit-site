@@ -1,64 +1,47 @@
-type Line = { t: string; c?: string };
+type Line = { text: string; className?: string };
 
 const LINES: Line[] = [
-  { t: "> Refactor the auth module", c: "text-white/90" },
-  { t: "✓ Thinking…", c: "text-emerald-400/80" },
-  { t: "" },
-  { t: "🛡 Guardrails", c: "text-brand-magenta" },
-  { t: "✓ Read: AGENTS.md", c: "text-white/80" },
-  { t: '  └ Found guardrails: "No auth behavior changes, log redaction, validate inputs."', c: "text-white/45" },
-  { t: "" },
-  { t: "✓ Create: src/auth/core.ts  +312", c: "text-white/80" },
-  { t: "✓ Create: src/auth/session.ts  +138", c: "text-white/80" },
-  { t: "◈ Security check", c: "text-brand-magenta" },
-  { t: "  └ 10 passed, 0 failed", c: "text-emerald-400/80" },
-  { t: "" },
-  { t: "✓ Edit: src/auth/middleware.ts  +79 -101", c: "text-white/80" },
-  { t: "🔍 Security scan", c: "text-brand-magenta" },
-  { t: "  └ ✓ 0 new issues", c: "text-emerald-400/80" },
+  { text: "▸ Detection  CS-4417  ·  Critical", className: "text-brand-cyan" },
+  { text: "✓ Charlotte AI  Triaged in 4s", className: "text-brand-blue-bright" },
+  { text: "  └ Kerberoasting attempt → svc-sql01 (identity risk: 92)", className: "text-white/55" },
+  { text: "🛡 Identity Protection  Enforced step-up MFA", className: "text-white/85" },
+  { text: "✓ Falcon Insight XDR  Isolated host WIN-APP-07", className: "text-white/85" },
+  { text: "◈ Next-Gen SIEM  Correlated 3 domains · 1 incident", className: "text-brand-blue-bright" },
+  { text: "🔍 AIDR  Blocked prompt-injection on internal copilot", className: "text-brand-cyan" },
+  { text: "  └ 0 data exfiltration · analyst notified", className: "text-white/55" },
 ];
 
 export default function TerminalMock() {
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0d0c11] text-left shadow-[0_40px_120px_-30px_rgba(70,30,140,0.55)]">
-      {/* title bar */}
-      <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-        <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-        <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-      </div>
+    <figure className="w-full text-left">
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#070c16] shadow-[0_40px_120px_-30px_rgba(46,125,255,0.45)]">
+        <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
+          <span className="h-3 w-3 rounded-full bg-[#3A4453]" />
+          <span className="h-3 w-3 rounded-full bg-[#4B5566]" />
+          <span className="h-3 w-3 rounded-full bg-[#5B6478]" />
+          <span className="ml-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">Soarseit SOC</span>
+        </div>
 
-      <div className="thin-scroll max-h-[380px] overflow-hidden px-5 py-4 font-mono text-[12.5px] leading-[1.65]">
-        {LINES.map((l, i) => (
+        <div className="thin-scroll overflow-hidden px-5 py-5 font-mono text-[12px] leading-[1.8] sm:text-[13px]">
+          {LINES.map((line, index) => (
+            <div
+              key={line.text}
+              className={`reveal-x ${line.className ?? "text-white/70"}`}
+              style={{ animationDelay: `${0.15 + index * 0.14}s` }}
+            >
+              {line.text}
+            </div>
+          ))}
           <div
-            key={i}
-            className={`reveal-x ${l.c ?? "text-white/70"}`}
-            style={{ animationDelay: `${0.15 + i * 0.14}s` }}
+            className="reveal-x mt-5 flex items-center gap-2 rounded-lg border border-white/10 bg-black/30 px-3 py-2.5 text-white/40"
+            style={{ animationDelay: `${0.15 + LINES.length * 0.14}s` }}
           >
-            {l.t === "" ? " " : renderLine(l.t)}
+            <span className="caret text-brand-cyan">▍</span>
+            Ask Charlotte AI…
           </div>
-        ))}
-        {/* input row */}
-        <div
-          className="reveal-x mt-4 flex items-center gap-2 rounded-lg border border-white/10 bg-black/40 px-3 py-2.5 text-white/40"
-          style={{ animationDelay: `${0.15 + LINES.length * 0.14}s` }}
-        >
-          <span className="caret text-brand-purple">▍</span>
-          Type your prompt…
         </div>
       </div>
-    </div>
-  );
-}
-
-function renderLine(t: string) {
-  return t.split(/(src\/[\w/.]+)/g).map((part, i) =>
-    part.startsWith("src/") ? (
-      <span key={i} className="text-brand-purple underline decoration-brand-purple/40 underline-offset-2">
-        {part}
-      </span>
-    ) : (
-      <span key={i}>{part}</span>
-    )
+      <figcaption className="mt-3 text-center text-[12px] text-body/55">Illustrative Soarseit workflow</figcaption>
+    </figure>
   );
 }

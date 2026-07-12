@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import TrustedBy from "@/components/sections/TrustedBy";
-import ProductCards from "@/components/sections/ProductCards";
 import Stats from "@/components/sections/Stats";
 import ProblemPanels from "@/components/sections/ProblemPanels";
 import Features from "@/components/sections/Features";
@@ -11,9 +10,8 @@ export default function Home() {
     <>
       <Hero />
       <TrustedBy />
-      <ProductCards />
-      <Stats />
       <ProblemPanels />
+      <Stats />
       <Features />
       <CTA />
     </>
